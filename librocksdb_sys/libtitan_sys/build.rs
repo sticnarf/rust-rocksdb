@@ -34,10 +34,11 @@ fn main() {
         .define("WITH_LZ4", "ON")
         .register_dep("ZSTD")
         .define("WITH_ZSTD", "ON")
-        .register_dep("SNAPPY")
-        .define("WITH_SNAPPY", "ON")
+        // .register_dep("SNAPPY")
+        // .define("WITH_SNAPPY", "ON")
         .define("WITH_TITAN_TESTS", "OFF")
         .define("WITH_TITAN_TOOLS", "OFF")
+        .cxxflag("-flto")
         .build_target("titan")
         .very_verbose(true)
         .build();
